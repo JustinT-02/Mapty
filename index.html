@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Mapty stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Leaflet stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.0/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+
+    <!-- Leaflet package -->
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.0/dist/leaflet.js"
+      integrity="sha256-oH+m3EWgtpoAmoBO/v+u8H/AdwB/54Gc/SgqjUKbb4Y="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+    <title>mapty 🗺 // Map your workouts</title>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo" class="logo" />
+
+      <!-- List of forms -->
+      <ul class="workouts">
+        <!-- Form element for every workout -->
+        <form class="form hidden">
+          <!-- Enter type of activity -->
+          <div class="form__row">
+            <label class="form__label">Type</label>
+            <select class="form__input form__input--type">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <!-- Enter distance -->
+          <div class="form__row">
+            <label class="form__label">Distance</label>
+            <input class="form__input form__input--distance" placeholder="km" />
+          </div>
+          <!-- Enter duration -->
+          <div class="form__row">
+            <label class="form__label">Duration</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="min"
+            />
+          </div>
+          <!-- Enter cadence if running -->
+          <div class="form__row">
+            <label class="form__label">Cadence</label>
+            <input
+              class="form__input form__input--cadence"
+              placeholder="step/min"
+            />
+          </div>
+          <!-- Enter elevation gain if cycling -->
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Elev Gain</label>
+            <input
+              class="form__input form__input--elevation"
+              placeholder="meters"
+            />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+      </ul>
+    </div>
+    <!-- Map displayed here-->
+    <div id="map"></div>
+  </body>
+</html>
